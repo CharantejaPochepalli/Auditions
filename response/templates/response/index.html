@@ -1,0 +1,713 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Audition{% endblock title %}
+{% block content %}
+
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Protest+Riot&display=swap')
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: url("https://media.istockphoto.com/photos/neon-glowing-arrows-symbols-stock-image-picture-id1288697510?b=1&k=20&m=1288697510&s=170667a&w=0&h=eu3-w7wgLn08fysfViCTJOL9CEotfkeYfBT-JIjr8po=")!important;
+    background-size: cover!important;
+    background-position: center;
+    height: 100vh;
+    overflow-y: hidden;
+} */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  
+}
+
+body {
+	font-family: "Alumni Sans", sans-serif;
+   background-image: url("");
+    background-size: cover;
+    
+    
+    
+    height: 100vh;
+    padding:0;
+    margin:0;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+justify-content: center;
+	align-items: center;
+	min-height: 80vh;
+	font-size: 1.2em;
+	
+	color: #fff;
+	text-transform: uppercase;
+	gap: 30px;
+  margin-bottom: -10px;
+
+}
+
+h1 {
+	font-size: 3em;
+	text-decoration:;
+	@media (max-width: 768px) {
+		font-size: 1.3em;
+	}
+}
+
+
+
+.text-shadow {
+	font-style: italic;
+	text-transform: uppercase;
+	color: transparent;
+	-webkit-text-stroke: #fff;
+	-webkit-text-stroke-width: 1px;
+	text-shadow: 2px 2px 10px rgb(100, 100, 135);
+	transition: all 0.5s ease-in-out;
+	text-align: center;
+	letter-spacing: 0.1em;
+	animation: flicker 0.5s ease-in-out infinite alternate;
+}
+
+
+.text-shadows {
+	font-family: 'Protest Riot', sans-serif;
+	text-transform: uppercase;
+	color: transparent;
+	-webkit-text-stroke: #fff;
+	-webkit-text-stroke-width: 1px;
+	text-shadow: 2px 2px 10px rgb(100, 100, 135);
+	transition: all 0.5s ease-in-out;
+	/text-align: center;/
+	letter-spacing: 0.1em;
+	/* animation: flicker 0.5s ease-in-out infinite alternate; */
+  /* padding: 5px; */
+  margin-bottom: 15px;
+}
+
+/* .text-shadow:hover {
+		color: #fff;
+	} */
+
+.tags small {
+	@media (max-width: 768px) {
+		font-size: 0.5em;
+	}
+}
+
+  @media screen and (max-width: 560px){
+    p{
+      font-size: 12px;
+      padding: 1rem;
+    }
+  }
+
+/* @keyframes flicker {
+	0% {
+		opacity: 0.7;
+		text-shadow: 2px 2px 10px blue;
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 2px 2px 20px blue;
+	}
+} */
+    .b1{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: table;
+  background-size: cover;
+}
+.b1 .in1{
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  max-width: none;
+}
+.content{
+  margin: auto;
+  text-align: center;
+  margin-top: -200px;
+
+}
+.content h1{
+  font-family: 'Century Gothic',sans-serif;
+  color:var(--color-text);
+  font-size: 400%;
+  text-shadow: 0 0 300px #000;
+  margin-bottom:10px;
+}
+.rulebox p{
+     font-family: 'Century Gothic',sans-serif;
+  color: #f9f3f4;
+    font-weight: 700;
+    margin: 5% 5%;
+    text-align: center;
+    justify-content: center;
+  text-shadow: 0 0 300px #000;
+  margin-bottom: 30px;
+}
+.rulebox{
+  background-color: rgba(0,0,0, 0.6);
+  width: 65vw;
+  margin-left: 20vw;
+    margin-bottom: 20px;
+  padding: 10px 0px 10px;
+  border-radius: 2%;
+}
+.content {
+  border-radius: 9px;
+  color: #f9f3f4;
+  text-decoration: none;
+  font-family: 'Century Gothic',sans-serif;
+  border: 3px solid;
+  padding: 7px 100px;
+  font-weight:100;
+  margin-top: 10px;
+
+}
+.content .btn:hover{
+  color: blue;
+}
+@media only screen and (max-width: 768px)
+{
+  .content h1{
+    font-size: 200%;
+    margin-bottom: 20px;
+  }
+  .content p{
+    margin-bottom: 30px;
+    font-weight: 400;
+  }
+  .rulebox{
+  background-color: rgba(0,0,0, 0.6);
+  width: 80vw;
+  margin-left: 10vw;
+  padding: 2px 0px 2px;
+  border-radius: 2%;
+  
+}
+  .rulebox p{
+      font-size:9px;
+      margin-bottom: 30px;
+  }
+
+}
+
+/Button Style/
+:root {
+  --notch:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%);
+  --notch--outline:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 4px,4px 4px,4px calc(100% - 4px),calc(100% - 12px) calc(100% - 4px),calc(100% - 4px) calc(100% - 12px),calc(100% - 4px) 4px,0 4px);
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: white;
+  cursor: pointer;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.33));
+  font-family: Gotham Bold, system, sans-serif;
+  font-size: 20px;
+  height: 40px;
+  letter-spacing: 2px;
+  line-height: 15px;
+  outline: none;
+  overflow: visible;
+  padding: 20px 45px 35px 45px;
+  position: relative;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  z-index: 1;
+  bottom: 15px;
+}
+.btn::before {
+  
+  bottom: 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 4px, 4px 4px, 4px calc(100% - 4px), calc(100% - 12px) calc(100% - 4px), calc(100% - 4px) calc(100% - 12px), calc(100% - 4px) 4px, 0 4px);
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 4px, 4px 4px, 4px calc(100% - 4px), calc(100% - 12px) calc(100% - 4px), calc(100% - 4px) calc(100% - 12px), calc(100% - 4px) 4px, 0 4px);
+  -webkit-clip-path: var(--notch--outline);
+          clip-path: var(--notch--outline);
+  content: "";
+  display: block;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.5s ease;
+}
+.btn::after {
+  background: #fff;
+  bottom: 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  -webkit-clip-path: var(--notch);
+          clip-path: var(--notch);
+  content: "";
+  display: block;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.5s ease;
+  z-index: -1;
+}
+.btn:hover {
+  filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.5));
+  transition: 0.52s ease 0.48s;
+  color: black;
+}
+.btn:hover::before {
+  -webkit-animation: turn-on--outline-before 1s;
+          animation: turn-on--outline-before 1s;
+}
+.btn:hover::after {
+  -webkit-animation: turn-on--outline-after 1s;
+          animation: turn-on--outline-after 1s;
+  opacity: 1;
+}
+
+@-webkit-keyframes turn-on--outline-before {
+  0% {
+    opacity: 1;
+  }
+  8% {
+    opacity: 0.5;
+  }
+  16% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 0.5;
+  }
+  32% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  48% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes turn-on--outline-before {
+  0% {
+    opacity: 1;
+  }
+  8% {
+    opacity: 0.5;
+  }
+  16% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 0.5;
+  }
+  32% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  48% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes turn-on--outline-after {
+  0% {
+    opacity: 0;
+  }
+  48% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes turn-on--outline-after {
+  0% {
+    opacity: 0;
+  }
+  48% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+/* footer */
+
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+.footer-section {
+  background: #151414;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+      color: #7e7e7e;
+  line-height: 28px;
+}
+.footer-social-icon span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+.facebook-bg{
+  background: #3B5998;
+}
+.twitter-bg{
+  background: #55ACEE;
+}
+.google-bg{
+  background: #DD4B39;
+}
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #ff5e14;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+  color: #ff5e14;
+}
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #ff5e14;
+    padding: 13px 20px;
+    border: 1px solid #ff5e14;
+    top: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area{
+  background: #202020;
+  padding: 25px 0;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a{
+  color: #ff5e14;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a{
+  color: #ff5e14;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+}
+
+
+
+
+    </style>
+
+
+<!-- footer -->
+
+ 
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Footer Design</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+
+
+<!--<section class="b1">
+  <div class="in1">
+    <div class="content">
+      <h1>SAE AUDITIONS</h1>
+      <div class="rulebox">
+      <p >
+        After you login you will have exactly three hours to answer all the questions after which all the responses will
+        be auto submitted.<br>
+        The questions which are mentioned compulsory should not be left unanswered.<br>
+        Once submitted, you cannot change the answers.<br>
+        Answer the following sections according to your preferences(You may answer multiple sections):<br>
+        Questions 18 to 25 [CREATIVE DESIGN AND PHOTOGRAPHY]<br>
+        Questions 26 to 32 [AUTOMOBILE]<br>
+        Questions 33 to 46 [ROBOTICS]<br>
+        Questions 47 to 48 [WEB DEVELOPMENT]<br>
+      </p>
+    </div>
+<a class="btn" href="/response/questions/">START</a>
+    </div>
+</div>
+</section> -->
+
+<section>
+	<h1 class="text-shadow"> SAE AUDITIONS 2K24  </h1>
+	<div class="tags">
+    <ol>
+      <li><p class="text-shadows">  You will have exactly three hours to answer all the questions after which all the responses will
+      be auto submitted.<br></p></li>
+      <li><p class="text-shadows">The questions which are mentioned compulsory should not be left unanswered.<br></p></li>
+      <li><p class="text-shadows">Once submitted, you cannot change the answers.<br></p></li>
+      <li>    <p class="text-shadows">Answer the following sections according to your preferences(You may answer multiple sections):<br></p></li>
+      <li><p class="text-shadows">Questions 18 to 25 [CREATIVE DESIGN AND PHOTOGRAPHY]<br></p></li>
+      <li> <p class="text-shadows">Questions 26 to 32 [AUTOMOBILE]<br></p></li>
+      <li><p class="text-shadows">Questions 33 to 47 [ROBOTICS]<br></p></li>
+      <li> <p class="text-shadows">Questions 48 and 49 [WEB DEVELOPMENT]<br></p></li>
+    </ol>
+		
+    
+    
+
+    
+    
+    
+   
+    
+	</div>
+  <a class="btn" href="/response/questions/">Start</a>
+</section>
+<div class="cursor"></div>
+    <div class="cursor2"></div>
+
+
+
+
+    <footer class="footer-section">
+      <div class="container">
+          <div class="footer-cta pt-5 pb-5">
+              <div class="row">
+                  <div class="col-xl-4 col-md-4 mb-30">
+                      <div class="single-cta">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <div class="cta-text">
+                              <h4>Find us</h4>
+                              <span>Mahatma Gandhi Avanue,A-zone,Durgapur,West Bengle</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-4 col-md-4 mb-30">
+                      <div class="single-cta">
+                          <i class="fas fa-phone"></i>
+                          <div class="cta-text">
+                              <h4>Call us</h4>
+                              <span>+91 8574613029</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-4 col-md-4 mb-30">
+                      <div class="single-cta">
+                          <i class="far fa-envelope-open"></i>
+                          <div class="cta-text">
+                              <h4>Mail us</h4>
+                              <span>saeindia@nitdgp.ac.in</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="footer-content pt-5 pb-5">
+              <div class="row">
+                  <div class="col-xl-4 col-lg-4 mb-50">
+                      <div class="footer-widget">
+                          <div class="footer-logo">
+                              <a href="saenitdgp.com"><img src="../../../static/media/images/sae_logo.png" class="img-fluid" alt="logo"></a>
+                          </div>
+                          <div class="footer-text">
+                              <p>We are the Society of Automotive Engineers Collegiate Club of National Institute of Technology Durgapur</p>
+                          </div>
+
+                      </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                      <div class="footer-widget">
+                          <div class="footer-widget-heading">
+                              <h3>Useful Links</h3>
+                          </div>
+                          <ul>
+                              <li><a href="https://www.saenitdgp.com">Official Website</a></li>
+                              
+                             <li><a href="https://www.saenitdgp.com/events">Events</a></li>
+                             
+                              <li><a href="https://www.saenitdgp.com/ted">TedX</a></li>
+                              
+                              <li><a href="https://www.saenitdgp.com/arhn">Aarohan</a></li>
+                              
+                              <li><a href="https://www.saenitdgp.com/team">Our Team</a></li>
+                            
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                      <div class="footer-widget">
+                          <div class="footer-widget-heading">
+                                                        <div class="footer-social-icon">
+                              <span>Follow us</span>
+                              <a href="https://www.facebook.com/SAENITD?mibextid=gik2fB"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                              <a href="https://x.com/saeindia_nitdgp?t=6De59NVtM_GmGoD2q2-AYQ&s=08"><i class="fab fa-twitter twitter-bg"></i></a>
+                              <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="copyright-area">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                      <div class="copyright-text">
+                          <p>Copyright &copy; 2024. Made By SAE-Dev, All Right Reserved <a href="https://www.saenitdgp.com">SAENITD</a></p>
+                      </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                      <div class="footer-menu">
+                          <ul>
+                              <li><a href="#">Home</a></li>
+                              <li><a href="#">Terms</a></li>
+                              <li><a href="#">Privacy</a></li>
+                              <li><a href="#">Policy</a></li>
+                              <li><a href="#">Contact</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+</body>
+</html>
+{% endblock %}
